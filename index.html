@@ -15,22 +15,32 @@
         <section class="container">
             <h1>Eventos en Javascript</h1>
 
-            <div class="card">
-                <div class="card-body">
-                    <form id="formulario">
-                        <div class="mb-3">
-                            <label id="lbl-email" for="txt-email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="txt-email" aria-describedby="email-help">
-                            <div id="email-help" class="form-text text-danger"></div>
-                        </div>
-                        <div class="mb-3">
-                            <label id="lbl-password" for="txt-password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="txt-password" aria-describedby="password-help">
-                            <div id="password-help" class="form-text text-danger"></div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
-                    </form>
+            <div class="d-flex justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="formulario">
+                                <div class="mb-3">
+                                    <label id="lbl-email" for="txt-email" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="txt-email"
+                                        aria-describedby="email-help">
+                                    <div id="email-help" class="form-text text-danger"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label id="lbl-password" for="txt-password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="txt-password"
+                                        aria-describedby="password-help">
+                                    <div id="password-help" class="form-text text-danger"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                                <button type="button" class="btn btn-warning" id="btn-limpiar">Limpiar</button>
+                            </form>
 
+                        </div>
+                    </div>
+                    <div id="alert-send" class="alert alert-success mt-3 d-none" role="alert">
+                        Sus datos fueron enviados correctamente
+                    </div>
                 </div>
             </div>
         </section>

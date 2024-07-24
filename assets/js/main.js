@@ -6,6 +6,8 @@ var divPasswordHelp = document.getElementById("password-help")
 var divEmailHelp = document.getElementById("email-help")
 var labelPassword = document.getElementById("lbl-password")
 var labelEmail = document.getElementById("lbl-email")
+var btnLimpiar = document.getElementById("btn-limpiar")
+var alertSend = document.getElementById("alert-send")
 
 
 function limpiarErrores() {
@@ -19,15 +21,29 @@ function limpiarErrores() {
 formulario.addEventListener("submit", function(evento) {
     evento.preventDefault()
     limpiarErrores()
+    var valido = true
     if(txtEmail.value == '') {
         divEmailHelp.innerHTML = "Ingresar el correo electrónico"
         labelEmail.classList.add("text-danger")
+        valido = false
     }
 
     if(txtPassword.value == '') {
         divPasswordHelp.innerHTML = "Ingresar la contraseña"
         labelPassword.classList.add("text-danger")
+        valido = false
     }
+
+    if(valido) {
+        alertSend.classList.remove("d-none")
+    }
+})
+
+btnLimpiar.addEventListener("click", function() {
+    limpiarErrores()
+    txtEmail.value = ""
+    txtPassword.value = ""
+    alertSend.classList.add("d-none")
 })
 
 // formulario.addEventListener("submit", function(evento) {
@@ -53,6 +69,3 @@ formulario.addEventListener("submit", function(evento) {
 //     alert(txtPassword.value)
 // }
 // formulario.addEventListener("submit", procesaFormulario)
-
-
-console.log(txtPassword);
